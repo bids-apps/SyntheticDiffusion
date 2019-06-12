@@ -9,7 +9,7 @@ ENV FSLOUTPUTTYPE NIFTI_GZ
 COPY .  /home
 
 
-RUN python /home/fslinstaller.py -ocd do	
+RUN python /home/fslinstaller.py -o 
 RUN tar -xvf fsl-6.0.1-centos7_64.tar.gz -C /usr/local
 RUN rm -f fsl-6.0.1-centos7_64.tar.gz
 RUN yum -y install which
@@ -31,6 +31,7 @@ RUN yum -y install git
 RUN pip3 install git+https://www.github.com/keras-team/keras-contrib.git
 RUN pip3 install nibabel
 RUN pip3 install pillow
+RUN yum -y install unzip
 
 RUN chmod +x /home/pipeline.sh
 ENTRYPOINT ["/home/pipeline.sh"]
