@@ -9,7 +9,7 @@ ENV FSLOUTPUTTYPE NIFTI_GZ
 COPY .  /home
 
 
-RUN python /home/fslinstaller.py -o 
+RUN python /home/fslinstaller.py -o
 RUN tar -xvf fsl-6.0.1-centos7_64.tar.gz -C /usr/local
 RUN rm -f fsl-6.0.1-centos7_64.tar.gz
 RUN yum -y install which
