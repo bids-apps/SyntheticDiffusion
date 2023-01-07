@@ -95,6 +95,8 @@ workflows:
         requires:
         - build
     - deploy:
+        context:
+        - dockerhub
         requires:
         - test
         filters:
